@@ -23,7 +23,7 @@ siguiente.addEventListener('click', () => {
 })
 
 function fetchPokemon(id){
-    fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+    fetch(`http://127.0.0.1:5000/pokemon/${id}`)
     .then((res) => res.json())
     .then((data) => {
         createPokemon(data);
