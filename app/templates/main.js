@@ -39,6 +39,7 @@ function fetchContador(offset, limit){
 }
 
 function createPokemon(pokemon){
+
     const card = document.createElement('div');
     card.classList.add('pokemon-block');
 
@@ -48,33 +49,56 @@ function createPokemon(pokemon){
     const sprite = document.createElement('img');
     sprite.src = pokemon.sprites.front_default;
     spriteContainer.appendChild(sprite);
+    card.appendChild(spriteContainer);
 
     //ID
     const num = document.createElement('p');
     num.textContent = `#${pokemon.id.toString().padStart(3, 0)}`;
+    card.appendChild(num);
 
     //NOMBRE
     const name = document.createElement('p');
     name.classList.add('name');
     name.textContent = pokemon.name;
+    card.appendChild(name);
 
     //ALTURA
     const height = document.createElement('p');
-    name.classList.add('height');
+    height.classList.add('height');
     height.textContent = `Altura: ${pokemon.height.toString()}`;
+    card.appendChild(height);
 
     //PESO
     const weight = document.createElement('p');
-    name.classList.add('weight');
+    weight.classList.add('weight');
     weight.textContent = `Peso: ${pokemon.weight.toString()}`;
-
-    //CARD
-    card.appendChild(spriteContainer);
-    card.appendChild(num);
-    card.appendChild(name);
-    card.appendChild(height);
     card.appendChild(weight);
 
+    //TIPO
+    let cant_tipos = pokemon.types.length;
+    for(let i = 0; i < cant_tipos; i++){
+        const tipo = document.createElement('p');
+        tipo.classList.add('tipo');
+        tipo.textContent = `Tipo: ${pokemon.types[i].type.name.toString()}`;
+        card.appendChild(tipo);
+    }
+    
+    //FORMA
+    const forma = document.createElement('p');
+    forma.classList.add('forma');
+    forma.textContent = `Forma: ${pokemon.forms[0].name.toString()}`;
+    card.appendChild(forma);
+
+    //HABILIDAD
+
+    let cant_hab = pokemon.types.length;
+    for(let i = 0; i < cant_hab; i++){
+        const habi = document.createElement('p');
+        habi.classList.add('habi');
+        habi.textContent = `Habilidad: ${pokemon.abilities[i].ability.name.toString()}`;
+        card.appendChild(habi);
+    }
+   
     container.appendChild(card);
 }
 
