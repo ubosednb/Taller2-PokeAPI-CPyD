@@ -90,8 +90,7 @@ function createPokemon(pokemon){
     card.appendChild(forma);
 
     //HABILIDAD
-
-    let cant_hab = pokemon.types.length;
+    let cant_hab = pokemon.abilities.length;
     for(let i = 0; i < cant_hab; i++){
         const habi = document.createElement('p');
         habi.classList.add('habi');
