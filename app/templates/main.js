@@ -97,7 +97,36 @@ function createPokemon(pokemon){
         habi.textContent = `Habilidad: ${pokemon.abilities[i].ability.name.toString()}`;
         card.appendChild(habi);
     }
-   
+
+    //UBICACION
+    const location = document.createElement('p');
+    location.classList.add('location');
+    if(pokemon.id>=1 && pokemon.id<=151){
+        location.textContent = `Ubicación: Kanto`;
+    }
+    else if(pokemon.id>=152 && pokemon.id<=251){
+        location.textContent = `Ubicación: Johto`;
+    }
+    else if(pokemon.id>=252 && pokemon.id<=386){
+        location.textContent = `Ubicación: Hoenn`;
+    }
+    else if(pokemon.id>=387 && pokemon.id<=493){
+        location.textContent = `Ubicación: Sinnoh`;
+    }
+    else if(pokemon.id>=494 && pokemon.id<=649){
+        location.textContent = `Ubicación: Unova`;
+    }
+    else if(pokemon.id>=650 && pokemon.id<=721){
+        location.textContent = `Ubicación: Kalos`;
+    }
+    else if(pokemon.id>=722 && pokemon.id<=809){
+        location.textContent = `Ubicación: Alola`;
+    }
+    else if(pokemon.id>=810 && pokemon.id<=905){
+        location.textContent = `Ubicación: Galar`;
+    }
+    card.appendChild(location);
+
     container.appendChild(card);
 }
 
