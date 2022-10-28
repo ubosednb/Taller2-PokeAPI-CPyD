@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_cors import CORS
 from flask import render_template
 import requests
@@ -23,5 +23,5 @@ def index():
     return render_template('./index.html')
 
 if __name__ == "__main__":
-     app.config['ENV'] = "development"
-     app.run(debug=True)
+    app.config['ENV'] = "development"
+    app.run(debug=True)
