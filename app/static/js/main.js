@@ -172,18 +172,10 @@ function createPokemon(pokemon){
 
     //HABILIDAD
     let cant_hab = pokemon.abilities.length;
-
-    const textohab = document.createElement('div');
-    textohab.classList.add('textos');
-    //textohab.textContent = "Habilidad(es):";
-    card.appendChild(textohab);
-
-    var aux = cant_hab;
     for(let i = 0; i < cant_hab; i++){
-        aux--;
         const habi = document.createElement('p');
         habi.classList.add('habi');
-        if(aux>0){
+        if(i==0){
             habi.textContent = `Habilidad: ${pokemon.abilities[i].ability.name.toString()}\t`;
             card.appendChild(habi);
         }
