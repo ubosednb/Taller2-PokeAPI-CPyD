@@ -96,11 +96,11 @@ function createPokemon(pokemon){
 
     var imgpeso = document.createElement("img");
     imgpeso.classList.add('imgstyle');
-    imgpeso.setAttribute("src", "Vector.png");
+    imgpeso.setAttribute("src", "./static/img/Vector.png");
     contenedorpeso.appendChild(imgpeso);
     var imgaltura = document.createElement("img");
     imgaltura.classList.add('imgstyle');
-    imgaltura.setAttribute("src", "height.png");
+    imgaltura.setAttribute("src", "./static/img/height.png");
     contenedoraltura.appendChild(imgaltura);
 
     var textpeso = document.createElement('div');

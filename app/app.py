@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_cors import CORS
 import requests
 
@@ -19,8 +19,8 @@ def find_esentials(id):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('./index.html')
 
 if __name__ == "__main__":
-     app.config['ENV'] = "development"
-     app.run(debug=True)
+    app.config['ENV'] = "development"
+    app.run(debug=True)
