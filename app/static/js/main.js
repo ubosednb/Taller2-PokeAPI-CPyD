@@ -181,15 +181,13 @@ function createPokemon(pokemon){
     var aux = cant_hab;
     for(let i = 0; i < cant_hab; i++){
         aux--;
+        const habi = document.createElement('p');
+        habi.classList.add('habi');
         if(aux>0){
-            const habi = document.createElement('p');
-            habi.classList.add('habi');
             habi.textContent = `${pokemon.abilities[i].ability.name.toString()} /`;
             card.appendChild(habi);
         }
         else{
-            const habi = document.createElement('p');
-            habi.classList.add('habi');
             habi.textContent = `${pokemon.abilities[i].ability.name.toString()}`;
             card.appendChild(habi);
         }
