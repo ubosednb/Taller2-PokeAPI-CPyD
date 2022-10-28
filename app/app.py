@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
+from flask import render_template
 import requests
 
 URL_pokemon = 'https://pokeapi.co/api/v2/pokemon/'
@@ -17,9 +18,9 @@ def find_esentials(id):
     pokemon_info = poke_api(id)
     return pokemon_info
 
-@app.route('/')
+@app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('./index.html')
 
 if __name__ == "__main__":
      app.config['ENV'] = "development"

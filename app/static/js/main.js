@@ -22,8 +22,8 @@ siguiente.addEventListener('click', () => {
     fetchContador(offset, limit);
 })
 
-function fetchPokemon(id){
-    fetch(`http://127.0.0.1:5000/pokemon/${id}`)
+async function fetchPokemon(id){
+    await fetch(`http://127.0.0.1:5000/pokemon/${id}`)
     .then((res) => res.json())
     .then((data) => {
         createPokemon(data);
@@ -31,10 +31,10 @@ function fetchPokemon(id){
     });
 }
 
-function fetchContador(offset, limit){
+async function fetchContador(offset, limit){
     spinner.style.display = "block";
     for(let i = offset; i <= offset + limit; i++){
-        fetchPokemon(i);
+        await fetchPokemon(i);
     }
 }
 
@@ -96,11 +96,11 @@ function createPokemon(pokemon){
 
     var imgpeso = document.createElement("img");
     imgpeso.classList.add('imgstyle');
-    imgpeso.setAttribute("src", "Vector.png");
+    imgpeso.setAttribute("src", "./static/img/Vector.png");
     contenedorpeso.appendChild(imgpeso);
     var imgaltura = document.createElement("img");
     imgaltura.classList.add('imgstyle');
-    imgaltura.setAttribute("src", "height.png");
+    imgaltura.setAttribute("src", "./static/img/height.png");
     contenedoraltura.appendChild(imgaltura);
 
     var textpeso = document.createElement('div');
@@ -184,7 +184,7 @@ function createPokemon(pokemon){
         if(aux>0){
             const habi = document.createElement('p');
             habi.classList.add('habi');
-            habi.textContent = `${pokemon.abilities[i].ability.name.toString()}/`;
+            habi.textContent = `${pokemon.abilities[i].ability.name.toString()} /`;
             card.appendChild(habi);
         }
         else{
