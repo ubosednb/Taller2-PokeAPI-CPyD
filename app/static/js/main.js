@@ -175,7 +175,7 @@ function createPokemon(pokemon){
 
     const textohab = document.createElement('div');
     textohab.classList.add('textos');
-    textohab.textContent = "Habilidad(es):";
+    //textohab.textContent = "Habilidad(es):";
     card.appendChild(textohab);
 
     var aux = cant_hab;
@@ -184,11 +184,11 @@ function createPokemon(pokemon){
         const habi = document.createElement('p');
         habi.classList.add('habi');
         if(aux>0){
-            habi.textContent = `${pokemon.abilities[i].ability.name.toString()} /`;
+            habi.textContent = `Habilidad: ${pokemon.abilities[i].ability.name.toString()}\t`;
             card.appendChild(habi);
         }
         else{
-            habi.textContent = `${pokemon.abilities[i].ability.name.toString()}`;
+            habi.textContent = `Habilidad Oculta: ${pokemon.abilities[i].ability.name.toString()}`;
             card.appendChild(habi);
         }
     }
