@@ -70,11 +70,13 @@ function createPokemon(pokemon){
     spriteContainer.classList.add('img-container');
     const sprite = document.createElement('img');
     sprite.src = pokemon.sprites.front_default;
+    sprite.classList.add('spriteimg');
     spriteContainer.appendChild(sprite);
     card.appendChild(spriteContainer);
 
     //ID
     const num = document.createElement('p');
+    num.classList.add('name');
     num.textContent = `#${pokemon.id.toString().padStart(3, 0)}`;
     card.appendChild(num);
 
@@ -84,46 +86,113 @@ function createPokemon(pokemon){
     name.textContent = pokemon.name;
     card.appendChild(name);
 
-    //ALTURA
-    const height = document.createElement('p');
-    height.classList.add('height');
-    height.textContent = `Altura: ${pokemon.height.toString()}`;
-    card.appendChild(height);
+    //PESO Y ALTURA
+    var contenedor = document.createElement('div');
+    contenedor.classList.add('contenenedor');
+    var contenedorpeso = document.createElement('div');
+    contenedorpeso.classList.add('subcont');
+    var contenedoraltura = document.createElement('div');
+    contenedoraltura.classList.add('subcont');
 
-    //PESO
-    const weight = document.createElement('p');
-    weight.classList.add('weight');
-    weight.textContent = `Peso: ${pokemon.weight.toString()}`;
-    card.appendChild(weight);
+    var imgpeso = document.createElement("img");
+    imgpeso.classList.add('imgstyle');
+    imgpeso.setAttribute("src", "Vector.png");
+    contenedorpeso.appendChild(imgpeso);
+    var imgaltura = document.createElement("img");
+    imgaltura.classList.add('imgstyle');
+    imgaltura.setAttribute("src", "height.png");
+    contenedoraltura.appendChild(imgaltura);
+
+    var textpeso = document.createElement('div');
+    textpeso.textContent=`${pokemon.weight.toString()} kg`;
+    textpeso.classList.add('parrafo');
+    var textweight = document.createElement('div');
+    textweight.textContent="Peso";
+    textweight.classList.add('parrafo2');
+
+    var textaltura = document.createElement('div');
+    textaltura.textContent=`${pokemon.height.toString()} m`;
+    textaltura.classList.add('parrafo');
+    var textheight = document.createElement('div');
+    textheight.textContent="Altura";
+    textheight.classList.add('parrafo2');
+
+    contenedorpeso.appendChild(textpeso);
+    contenedorpeso.appendChild(textweight);
+    contenedor.appendChild(contenedorpeso);
+    contenedoraltura.appendChild(textaltura);
+    contenedoraltura.appendChild(textheight);
+    contenedor.appendChild(contenedoraltura);
+    card.appendChild(contenedor);
 
     //TIPO
+    const containerTipos= document.createElement('div')
+    containerTipos.classList.add('typescontainer');
     let cant_tipos = pokemon.types.length;
+
+    const textotipo = document.createElement('div');
+    textotipo.classList.add('textos');
+    textotipo.textContent = "Tipo(s):";
+    card.appendChild(textotipo);
+
     for(let i = 0; i < cant_tipos; i++){
-        const tipo = document.createElement('p');
-        type = pokemon.types[i].type.name.toString();
-        tipo.classList.add('tipo');
-        tipo.textContent = `Tipo: ${type}`;
-        card.appendChild(tipo);
+        const type = pokemon.types[i].type.name.toString();
+        const pTipo=document.createElement('p')
+        pTipo.classList.add('pTipo');
+        pTipo.textContent = `${type}`;
+        const tipo = document.createElement('div');
+        const color = colors[type];
+        tipo.classList.add('types');
+        tipo.appendChild(pTipo)
+        tipo.style.backgroundColor = color;
+        containerTipos.appendChild(tipo)
+        card.appendChild(containerTipos);
         if(i==0){
             //AGREGANDO COLOR
             const color = colors[type];
-            card.style.backgroundColor = color;
+            card.style.backgroundColor = '#FFFFFF';
         }
     }
     
     //FORMA
-    const forma = document.createElement('p');
-    forma.classList.add('forma');
-    forma.textContent = `Forma: ${pokemon.forms[0].name.toString()}`;
-    card.appendChild(forma);
+    let cant_forma = pokemon.forms.length;
+
+    for(let i = 0; i < cant_forma; i++){
+        const forma = document.createElement('p');
+        forma.classList.add('forma');
+        if(pokemon.forms[i].name.toString() == pokemon.name){
+            forma.textContent = "Forma: Original";
+            card.appendChild(forma);
+        }
+        else{
+            forma.textContent = `Forma: ${pokemon.forms[i].name.toString()}`;
+            card.appendChild(forma);
+        }
+    }
 
     //HABILIDAD
     let cant_hab = pokemon.abilities.length;
+
+    const textohab = document.createElement('div');
+    textohab.classList.add('textos');
+    textohab.textContent = "Habilidad(es):";
+    card.appendChild(textohab);
+
+    var aux = cant_hab;
     for(let i = 0; i < cant_hab; i++){
-        const habi = document.createElement('p');
-        habi.classList.add('habi');
-        habi.textContent = `Habilidad: ${pokemon.abilities[i].ability.name.toString()}`;
-        card.appendChild(habi);
+        aux--;
+        if(aux>0){
+            const habi = document.createElement('p');
+            habi.classList.add('habi');
+            habi.textContent = `${pokemon.abilities[i].ability.name.toString()}/`;
+            card.appendChild(habi);
+        }
+        else{
+            const habi = document.createElement('p');
+            habi.classList.add('habi');
+            habi.textContent = `${pokemon.abilities[i].ability.name.toString()}`;
+            card.appendChild(habi);
+        }
     }
 
     //UBICACION
