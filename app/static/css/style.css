@@ -18,15 +18,9 @@
     margin-bottom: 40px;
     margin-top: 40px;
   }
-  
-  .img-container{
-    text-align: center;
-  }
 
   .spriteimg{
     height: 150px;
-    border: solid 2px;
-    border-radius: 100%;
   }
 
   .pokemon-block{
@@ -124,9 +118,6 @@
     margin-top: 0;
     width: auto;
     height: 20px;
-
-    /* Inside auto layout */
-
     flex: none;
     order: 0;
     align-self: stretch;
@@ -134,25 +125,20 @@
   }
 
   .types{
-        /* Type /
-    / Auto layout */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2px 8px;
-
     width: 60px;
     height: 20px;
     border-radius: 10px;
-    /* Inside auto layout */
     flex: none;
     order: 2;
     flex-grow: 0;
   }
 
   .pTipo{
-    /* Poppins Bold 10 */
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -161,18 +147,8 @@
     display: flex;
     align-items: center;
     text-align: center;
-
-    /* White */
-
     color: #FFFFFF;
-
-    /* Inside auto layout */
-
     flex: none;
     order: 0;
     flex-grow: 0;
-  }
-
-  .habi{
-    
   }

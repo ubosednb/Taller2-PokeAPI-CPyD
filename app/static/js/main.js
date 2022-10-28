@@ -65,9 +65,8 @@ function createPokemon(pokemon){
     const card = document.createElement('div');
     card.classList.add('pokemon-block');
 
-    // SPRITE
+    //SPRITE
     const spriteContainer = document.createElement('div');
-    spriteContainer.classList.add('img-container');
     const sprite = document.createElement('img');
     sprite.src = pokemon.sprites.front_default;
     sprite.classList.add('spriteimg');
@@ -130,8 +129,9 @@ function createPokemon(pokemon){
     containerTipos.classList.add('typescontainer');
     let cant_tipos = pokemon.types.length;
 
+    //SE PUEDE DEJAR MEJOR
     const textotipo = document.createElement('div');
-    textotipo.classList.add('textos');
+    textotipo.classList.add('textotipo');
     textotipo.textContent = "Tipo(s):";
     card.appendChild(textotipo);
 
@@ -150,7 +150,7 @@ function createPokemon(pokemon){
         if(i==0){
             //AGREGANDO COLOR
             const color = colors[type];
-            card.style.backgroundColor = '#FFFFFF';
+            spriteContainer.style.backgroundColor = color;
         }
     }
     
@@ -159,35 +159,32 @@ function createPokemon(pokemon){
 
     for(let i = 0; i < cant_forma; i++){
         const forma = document.createElement('p');
-        forma.classList.add('forma');
         if(pokemon.forms[i].name.toString() == pokemon.name){
             forma.textContent = "Forma: Original";
-            card.appendChild(forma);
         }
         else{
-            forma.textContent = `Forma: ${pokemon.forms[i].name.toString()}`;
-            card.appendChild(forma);
+            forma.textContent = `Forma: ${pokemon.forms[i].name.toString()}`; 
         }
+        card.appendChild(forma);
     }
 
     //HABILIDAD
     let cant_hab = pokemon.abilities.length;
     for(let i = 0; i < cant_hab; i++){
         const habi = document.createElement('p');
-        habi.classList.add('habi');
         if(i==0){
             habi.textContent = `Habilidad: ${pokemon.abilities[i].ability.name.toString()}\t`;
-            card.appendChild(habi);
         }
         else{
             habi.textContent = `Habilidad Oculta: ${pokemon.abilities[i].ability.name.toString()}`;
-            card.appendChild(habi);
         }
+        card.appendChild(habi);
     }
 
     //UBICACION
     const location = document.createElement('p');
-    location.classList.add('location');
+    //SE PUEDE DEJAR MEJOR
+    location.classList.add('name');
     if(pokemon.id>=1 && pokemon.id<=151){
         location.textContent = `Ubicación: Kanto`;
     }
