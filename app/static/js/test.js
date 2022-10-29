@@ -8,7 +8,7 @@ var limit = null;
 
 anterior.addEventListener('click', () => {
     if(offset != null){
-        offset = offset-10;
+        offset = offset-limit;
         /* removeChildNodes es para eliminar todas las card en los containers*/ 
         removeChildNodes(container);
         fetchPokemons(offset, limit);
@@ -17,7 +17,7 @@ anterior.addEventListener('click', () => {
 //AGREGAR IF CON LIMITE SI ES NECESARIO
 siguiente.addEventListener('click', () => {
     if(offset != null){
-        offset = offset+10;
+        offset = offset+limit;
         removeChildNodes(container);
         fetchPokemons(offset, limit);
     }
