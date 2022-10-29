@@ -1,33 +1,3 @@
-/*async function fetchPokemons(inicio, final){
-    
-    await fetch(`http://127.0.0.1:5000/pokemons/${inicio}/${final}`)
-    .then((res) => res.json())
-    .then((data) => {
-        console.log(data.results[0].url);
-        createPokemon(data)
-        
-    });
-}
-
-fetchPokemons(1, 40);
-
-
-async function createPokemon(pkmon){
-    for (var i = 0; i < 9; i++) {
-    await fetch(pkmon.results[i].url)
-    .then((res) => res.json())
-    .then((data) => {
-        lol(data);
-    });;
-  }
-}
-
-function lol(poke){
-console.log(poke);
-}
-*/
-
-
 const container = document.querySelector(".container");
 const spinner = document.querySelector("#spinner");
 const anterior = document.querySelector("#anterior");
@@ -47,15 +17,15 @@ siguiente.addEventListener('click', () => {
     removeChildNodes(container);
     fetchPokemons(offset, limit);
 })
+
 function verPokemones(){
     removeChildNodes(container);
-    var offset = document.getElementById('inicio').value;
+    var offset = document.getElementById('inicio').value - 1;
 
     var limit = document.getElementById('final').value;
 
     fetchPokemons(offset, limit);
 }
-console.log(a);
 
 async function fetchPokemons(inicio, final){
     
