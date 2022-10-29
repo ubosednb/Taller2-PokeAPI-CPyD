@@ -126,15 +126,17 @@ function createPokemon(pokemon){
     imgaltura.setAttribute("src", "./static/img/height.png");  // Agregando icono para la altura
     contenedoraltura.appendChild(imgaltura);
 
-    var textpeso = document.createElement('div');                 // Agregando texto que contiene el peso
-    textpeso.textContent=`${pokemon.weight.toString()} kg`;
+    var textpeso = document.createElement('div');       // Agregando texto que contiene el peso
+    peso=pokemon.weight/10;               
+    textpeso.textContent=`${peso.toString()} kg`;     
     textpeso.classList.add('parrafo');
     var textweight = document.createElement('div');               
     textweight.textContent="Peso";
     textweight.classList.add('parrafo2');
 
-    var textaltura = document.createElement('div');                  //Agregando texto que contiene la altura
-    textaltura.textContent=`${pokemon.height.toString()} m`;          // Se rescasta el peso de la altura
+    var textaltura = document.createElement('div');     //Agregando texto que contiene la altura
+    altura = pokemon.height/10;           
+    textaltura.textContent=`${altura.toString()} m`;          // Se rescasta el peso de la altura
     textaltura.classList.add('parrafo');                            
     var textheight = document.createElement('div'); 
     textheight.textContent="Altura";                               // Se agrega texto altura
