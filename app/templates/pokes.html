@@ -19,7 +19,7 @@
 <body class="back">
     <h1 class="title">Taller 2 - CPyD Sección 412</h1>
     <h2 class="subtitle">API Rest - PokeAPI</h2>
-    
+    <!-- Conexión a API -->
     <header>
       <nav id="nav">
         <ul>
@@ -28,11 +28,12 @@
         </ul>
       </nav>
     </header>
-
+    <!-- Caja de inputs -->
     <form>
       Inicio: <input type="number"   class="col-sm-2 col-form-label" id="inicio" placeholder="De donde empieza..." onkeypress="return soloNumeros(event)" onpaste="return false" max="898" min="0" required="Ingrese un número hasta 830">
       Límite: <input type="number"  class="col-sm-2 col-form-label" id="final" placeholder="¿Cuántos quieres imprimir?"onkeypress="return soloNumeros(event)" onpaste="return false" min="1" required="Ingrese un numero mayor o igual a 1">
       <script>
+        /* Función de validación de ingreso de sólo números */
         function soloNumeros(event){
             key=event.keycode || event.which;
             teclado=String.fromCharCode(key);
