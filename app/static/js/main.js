@@ -169,6 +169,7 @@ function createPokemon(pokemon){
             //AGREGANDO COLOR
             const color = colors[type];
             spriteContainer.style.backgroundColor = color;
+            spriteContainer.style.borderRadius = '10px';
         }
     }
     
