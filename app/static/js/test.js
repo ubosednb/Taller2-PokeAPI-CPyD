@@ -77,6 +77,7 @@ async function createPokemons(pkmon){
     }
 }
 
+
 const colors = {
 	normal: '#A8A77A',
 	fire: '#EE8130',
