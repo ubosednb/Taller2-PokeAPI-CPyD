@@ -33,14 +33,22 @@ const spinner = document.querySelector("#spinner");
 const anterior = document.querySelector("#anterior");
 const siguiente = document.querySelector("#siguiente");
 
-let offset = 1;
-let limit = 9;
+let offset = 0;
+let limit = 10;
 
+anterior.addEventListener('click', () => {
+    if(offset != 0){
+        offset = offset-10;
+        /* removeChildNodes es para eliminar todas las card en los containers*/ 
+        removeChildNodes(container);
+        fetchPokemons(offset, limit);
+    }
+})
 //AGREGAR IF CON LIMITE SI ES NECESARIO
 siguiente.addEventListener('click', () => {
     offset = offset+10;
     removeChildNodes(container);
-    fetchContador(offset, limit);
+    fetchPokemons(offset, limit);
 })
 
 
@@ -55,10 +63,10 @@ async function fetchPokemons(inicio, final){
     });
 }
 
-fetchPokemons(1, 50);
+fetchPokemons(offset, limit);
 
 async function createPokemons(pkmon){
-    for (var i = 2; i <50; i++) {
+    for (var i = 0; i < limit; i++) {
     await fetch(pkmon.results[i].url)
     .then((res) => res.json())
     .then((data) => {
@@ -66,13 +74,6 @@ async function createPokemons(pkmon){
         spinner.style.display = "none";
     });
   }
-}
-
-async function fetchContador(offset, limit){
-    spinner.style.display = "block";
-    for(let i = offset; i <= offset + limit; i++){
-        await createPokemons(i);
-    }
 }
 
 const colors = {
@@ -294,4 +295,3 @@ function removeChildNodes(parent){
     }
 }
 
-fetchContador(offset, limit);
