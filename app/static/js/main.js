@@ -58,6 +58,27 @@ const colors = {
 	steel: '#B7B7CE',
 	fairy: '#D685AD',
 };
+
+const translations = {
+	normal: 'Normal',
+	fire: 'Fuego',
+	water: 'Agua',
+	electric: 'Eléctrico',
+	grass: 'Planta',
+	ice: 'Hielo',
+	fighting: 'Lucha',
+	poison: 'Veneno',
+	ground: 'Tierra',
+	flying: 'Volador',
+	psychic: 'Psíquico',
+	bug: 'Bicho',
+	rock: 'Roca',
+	ghost: 'Fantasma',
+	dragon: 'Dragón',
+	dark: 'Siniestro',
+	steel: 'Acero',
+	fairy: 'Hada',
+};
 const main_types = Object.keys(colors);
 
 function createPokemon(pokemon){
@@ -139,7 +160,8 @@ function createPokemon(pokemon){
         const type = pokemon.types[i].type.name.toString();
         const pTipo=document.createElement('p')
         pTipo.classList.add('pTipo');
-        pTipo.textContent = `${type}`;
+        const tipoEsp = translations[type];
+        pTipo.textContent = `${tipoEsp}`;
         const tipo = document.createElement('div');
         const color = colors[type];
         tipo.classList.add('types');
