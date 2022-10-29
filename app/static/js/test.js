@@ -60,14 +60,11 @@ async function fetchPokemons(inicio, final){
     .then((res) => res.json())
     .then((data) => {
         createPokemons(data)
-        
     });
 }
 
-fetchPokemons(offset, limit);
-
 async function createPokemons(pkmon){
-        for (var i = 0; i < limit; i++) {
+        for (var i = 0; i < pkmon.results.length; i++) {
             await fetch(pkmon.results[i].url)
             .then((res) => res.json())
             .then((data) => {
