@@ -1,4 +1,5 @@
 # Taller 2 - CPyD Sección 412
+![Image_text](/app/static/img/Logo_UTEM.jpg)
 API REST de consulta que obtenga los datos de los personajes Pokémon (POKEDEX).<br>
 En el siguiente repositorio se encuentra el Taller N°2 de la asignatura **Computación Paralela y Distribuida**.
 
