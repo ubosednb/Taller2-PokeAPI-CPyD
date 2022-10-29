@@ -200,3 +200,32 @@
     nav ul li:hover {
       background: #eca023;
     }
+
+
+  /* About */
+  #div_about{
+    position: fixed;
+    left: 31%;
+    margin-left: -100px;
+    top: 35%;
+    margin-top: -50px;
+  }
+
+  #ul_about{
+    list-style-type: none;
+  }
+
+  #ul_about img{
+    width: 5%;
+  }
+
+  #ul_about li{
+    margin: 10px;
+    padding: 20px;
+    border-radius: 15px;
+    background:aliceblue;
+  }
+
+  #ul_about li a{
+    text-decoration: none;
+  }
