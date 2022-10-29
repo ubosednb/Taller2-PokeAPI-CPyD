@@ -47,12 +47,12 @@ siguiente.addEventListener('click', () => {
     removeChildNodes(container);
     fetchPokemons(offset, limit);
 })
-var a=[];
 function verPokemones(){
+    removeChildNodes(container);
     var offset = document.getElementById('inicio').value;
-    a.push(offset);
+
     var limit = document.getElementById('final').value;
-    a.push(limit);
+
     fetchPokemons(offset, limit);
 }
 console.log(a);
@@ -76,7 +76,6 @@ async function createPokemons(pkmon){
         });
     }
 }
-
 
 const colors = {
 	normal: '#A8A77A',
