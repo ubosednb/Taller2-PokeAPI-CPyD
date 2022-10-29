@@ -28,8 +28,9 @@ function verPokemones(){
     offset = document.getElementById('inicio').value - 1;
 
     limit = document.getElementById('final').value;
-
-    fetchPokemons(offset, limit);
+    if(offset<=897){
+        fetchPokemons(offset, limit);
+    }
 }
 
 async function fetchPokemons(inicio, final){
