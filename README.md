@@ -25,11 +25,11 @@ $ flask run
 
 **En el caso de windows:**
 ```bash 
-$ python -m venv venv
-$ .\venv\Scripts\activate
-$ pip install -r requirements.txt
-$ set FLASK_APP=app\app.py
-$ flask run
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+set FLASK_APP=app\app.py
+flask run
 ```
 
 ## Uso:
