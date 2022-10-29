@@ -204,15 +204,20 @@ function createPokemon(pokemon){
         
         habi.classList.add('habi');
         if(aux[i].is_hidden == false){
-            habi.textContent = `Habilidad: ${pokemon.abilities[i].ability.name.toString()}\t`;
+            var aux2 = pokemon.abilities[i].ability.name.toString();
+            aux2= aux2.replace("-"," ");
+            aux2 =  aux2.charAt(0).toUpperCase() + aux2.slice(1);
+            habi.textContent = `Habilidad: ${aux2}\t`;
             card.appendChild(habi);
         }
         else{
-            habi.textContent = `Habilidad Oculta: ${pokemon.abilities[i].ability.name.toString()}`;
+            var aux2 = pokemon.abilities[i].ability.name.toString();
+            aux2 = aux2.replace("-"," ");
+            aux2 =  aux2.charAt(0).toUpperCase() + aux2.slice(1);
+            habi.textContent = `Habilidad: ${aux2}\t`;
             card.appendChild(habi);
         }
     }
-
     //UBICACION
     const location = document.createElement('p');
     //SE PUEDE DEJAR MEJOR
