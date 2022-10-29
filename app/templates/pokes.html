@@ -19,6 +19,15 @@
 <body class="back">
     <h1 class="title">Taller 2 - CPyD Sección 412</h1>
     <h2 class="subtitle">API Rest - PokeAPI</h2>
+    
+    <header>
+      <nav id="nav">
+        <ul>
+          <li><a href="http://127.0.0.1:5000">Inicio</a></li>
+          <li><a href="http://127.0.0.1:5000/pokes">Pokemones</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <form>
       Inicio: <input type="number"   class="col-sm-2 col-form-label" id="inicio" placeholder="De donde empieza..." onkeypress="return soloNumeros(event)" onpaste="return false" max="898" min="0" required="Ingrese un número hasta 830">
@@ -47,18 +56,6 @@
     <div class="container">
 
     </div>
-
-    <nav class="pagination">
-        <ul class="pagination justify-content-center">
-          <li id="anterior" class="page-item">
-            <a class="page-link" href="#">Anterior</a>
-          </li>
-          <li id="siguiente" class="page-item">
-            <a class="page-link" href="#">Siguiente</a>
-          </li>
-        </ul>
-    </nav>
-
     <div id="spinner" class="spinner-border text-primary" role="status">
         <span class="visually-hidden">Cargando...</span>
     </div>
