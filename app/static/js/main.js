@@ -22,14 +22,6 @@ siguiente.addEventListener('click', () => {
     fetchContador(offset, limit);
 })
 
-async function fetchPokemons(inicio, final){
-    await fetch(`http://127.0.0.1:5000/pokemons/${inicio}/${final}`)
-    .then((res) => res.json())
-    .then((data) => {
-        console.log(data.results);
-    });
-}
-
 async function fetchPokemon(id){
     await fetch(`http://127.0.0.1:5000/pokemon/${id}`)
     .then((res) => res.json())

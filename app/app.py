@@ -29,6 +29,10 @@ def find_pokemons(id_1, id_2):
     pokemons_info = pokes_api(id_1, id_2)
     return pokemons_info
 
+@app.route("/pokes")
+def pokemons():
+    return render_template('./pokes.html')
+
 @app.route("/")
 def index():
     return render_template('./index.html')
