@@ -9,13 +9,11 @@ let limit = 9;
 anterior.addEventListener('click', () => {
     if(offset != 1){
         offset = offset-10;
-        /* removeChildNodes es para eliminar todas las card en los containers*/ 
         removeChildNodes(container);
         fetchContador(offset, limit);
     }
 })
 
-//AGREGAR IF CON LIMITE SI ES NECESARIO
 siguiente.addEventListener('click', () => {
     offset = offset+10;
     removeChildNodes(container);
@@ -149,8 +147,6 @@ function createPokemon(pokemon){
     const containerTipos= document.createElement('div')
     containerTipos.classList.add('typescontainer');
     let cant_tipos = pokemon.types.length;
-
-    //SE PUEDE DEJAR MEJOR
     const textotipo = document.createElement('div');
     textotipo.classList.add('textotipo');
     textotipo.textContent = "Tipo(s):";
@@ -178,7 +174,6 @@ function createPokemon(pokemon){
     
     //FORMA
     let cant_forma = pokemon.forms.length;
-
     for(let i = 0; i < cant_forma; i++){
         const forma = document.createElement('p');
         if(pokemon.forms[i].name.toString() == pokemon.name){
@@ -192,12 +187,8 @@ function createPokemon(pokemon){
 
     //HABILIDAD
     let cant_hab = pokemon.abilities.length;
-
     const textohab = document.createElement('div');
-    textohab.classList.add('textos');
-    //textohab.textContent = "Habilidad(es):";
     card.appendChild(textohab);
-
     for(let i = 0; i < cant_hab; i++){
         const habi = document.createElement('p');
         var aux = pokemon.abilities;
@@ -205,22 +196,21 @@ function createPokemon(pokemon){
         habi.classList.add('habi');
         if(aux[i].is_hidden == false){
             var aux2 = pokemon.abilities[i].ability.name.toString();
-            aux2= aux2.replace("-"," ");
-            aux2 =  aux2.charAt(0).toUpperCase() + aux2.slice(1);
+            aux2 = aux2.replace("-"," ");
+            aux2 = aux2.charAt(0).toUpperCase() + aux2.slice(1);
             habi.textContent = `Habilidad: ${aux2}\t`;
-            card.appendChild(habi);
         }
         else{
             var aux2 = pokemon.abilities[i].ability.name.toString();
             aux2 = aux2.replace("-"," ");
             aux2 =  aux2.charAt(0).toUpperCase() + aux2.slice(1);
             habi.textContent = `Habilidad Oculta: ${aux2}\t`;
-            card.appendChild(habi);
         }
+        card.appendChild(habi);
     }
+
     //UBICACION
     const location = document.createElement('p');
-    //SE PUEDE DEJAR MEJOR
     location.classList.add('name');
     if(pokemon.id>=1 && pokemon.id<=151){
         location.textContent = `Ubicación: Kanto`;
