@@ -20,8 +20,8 @@
     <h2 class="subtitle">API Rest - PokeAPI</h2>
 
     <form>
-      Inicio: <input type="text" id="inicio" placeholder="De donde empieza..." onkeypress="return soloNumeros(event)" onpaste="return false">
-      Final: <input type="text" id="final" placeholder="¿Cuántos quieres imprimir?"onkeypress="return soloNumeros(event)" onpaste="return false">
+      Inicio: <input type="number" id="inicio" placeholder="De donde empieza..." onkeypress="return soloNumeros(event)" onpaste="return false" max="898" min="0" required="Ingrese un número hasta 830">
+      Límite: <input type="number" id="final" placeholder="¿Cuántos quieres imprimir?"onkeypress="return soloNumeros(event)" onpaste="return false" min="1" required="Ingrese un numero mayor o igual a 1">
       <script>
         function soloNumeros(event){
             key=event.keycode || event.which;
