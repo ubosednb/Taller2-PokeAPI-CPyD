@@ -10,12 +10,28 @@ En el siguiente repositorio se encuentra el Taller N°2 de la asignatura **Compu
 * Renato Palominos
 * Matías Álvarez
 
-## Instalación:
+## Instalación BASH Windows:
+```bash 
+En caso de trabajar en Windows se debe instalar Git Bash desde el siguiente enlace: https://git-scm.com/downloads
+Instalar de forma normal y agregar al PATH de Windows.
+
+Posterior activar la SSH Key de GITHUB con las instrucciones del siguiente enlace:
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+```
+
+## Clonación de Repositorio:
+Se debe clonar el repositorio desde la terminal con el siguiente comando:
 ```bash 
 $ git clone https://github.com/ubosednb/Taller2-PokeAPI-CPyD
 ```
 
 **En el caso de linux:**
+Se debe verificar que Python esté instalado con el siguiente comando:
+```bash 
+$ python --version
+```
+Si este está instalado seguir los siguientes pasos desde la carpeta del repositorio, de lo contrario instalar Python según la distribución a utilizar.
+
 ```bash 
 $ python3 -m venv venv
 $ source ./venv/bin/activate
@@ -25,6 +41,16 @@ $ flask run
 ```
 
 **En el caso de windows:**
+Se debe descargar e instalar una versión superior a Python 3.8 desde la web oficial
+```bash 
+https://www.python.org/downloads/
+```
+Una ves descargado el instalador, agregar la opcion Add to PATH, y luego verficar desde una terminal si este se instaló correctamente con el comando:
+```bash 
+python --version
+```
+Si este se muestra instalado, continuar con los siguientes pasos desde GIT BASH dentro de la carpeta del repositorio:
+
 ```bash 
 python -m venv venv
 .\venv\Scripts\activate
@@ -38,3 +64,5 @@ Abrir en navegador:<br>
 localhost:5000<br>
 o<br>
 127.0.0.1:5000<br>
+
+Y Utilizar el Servicio Rest a comodidad.
