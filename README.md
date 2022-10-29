@@ -27,7 +27,9 @@ $ git clone https://github.com/ubosednb/Taller2-PokeAPI-CPyD
 
 ### Linux
 Se debe verificar que Python y en caso que no lo esté, instalarlo:
+
 _Debian Based: sudo apt_
+
 _Arch Linux Based: sudo pacman_
 ```bash 
 $ sudo apt install python3 / sudo pacman -S python
