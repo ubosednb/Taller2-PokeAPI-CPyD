@@ -33,9 +33,6 @@ const spinner = document.querySelector("#spinner");
 const anterior = document.querySelector("#anterior");
 const siguiente = document.querySelector("#siguiente");
 
-let offset = 0;
-let limit = 10;
-
 anterior.addEventListener('click', () => {
     if(offset != 0){
         offset = offset-10;
@@ -51,13 +48,17 @@ siguiente.addEventListener('click', () => {
     fetchPokemons(offset, limit);
 })
 
+function verPokemones(){
+    var offset = document.getElementById('inicio');
+    var limit = document.getElementById('final');
+    fetchPokemons(offset, limit);
+}
 
 async function fetchPokemons(inicio, final){
     
     await fetch(`http://127.0.0.1:5000/pokemons/${inicio}/${final}`)
     .then((res) => res.json())
     .then((data) => {
-        console.log(data.results[0].url);
         createPokemons(data)
         
     });
@@ -66,14 +67,14 @@ async function fetchPokemons(inicio, final){
 fetchPokemons(offset, limit);
 
 async function createPokemons(pkmon){
-    for (var i = 0; i < limit; i++) {
-    await fetch(pkmon.results[i].url)
-    .then((res) => res.json())
-    .then((data) => {
-        createPokemon(data);
-        spinner.style.display = "none";
-    });
-  }
+        for (var i = 0; i < limit; i++) {
+            await fetch(pkmon.results[i].url)
+            .then((res) => res.json())
+            .then((data) => {
+                createPokemon(data);
+                spinner.style.display = "none";
+        });
+    }
 }
 
 const colors = {
