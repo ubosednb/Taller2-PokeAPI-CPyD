@@ -25,12 +25,15 @@ Se debe clonar el repositorio desde la terminal con el siguiente comando:
 $ git clone https://github.com/ubosednb/Taller2-PokeAPI-CPyD
 ```
 
-**En el caso de linux:**
-Se debe verificar que Python esté instalado con el siguiente comando:
+### Linux
+Se debe verificar que Python y en caso que no lo esté, instalarlo:
+_Debian Based: sudo apt_
+_Arch Linux Based: sudo pacman_
 ```bash 
+$ sudo apt install python3 / sudo pacman -S python
 $ python --version
 ```
-Si este está instalado seguir los siguientes pasos desde la carpeta del repositorio, de lo contrario instalar Python según la distribución a utilizar.
+Luego de instalar Python, seguir las siguientes instrucciones en la carpeta del repositorio clonado:
 
 ```bash 
 $ python3 -m venv venv
@@ -40,7 +43,7 @@ $ export FLASK_APP=app/app.py
 $ flask run
 ```
 
-**En el caso de windows:**
+### Windows
 Se debe descargar e instalar una versión superior a Python 3.8 desde la web oficial
 ```bash 
 https://www.python.org/downloads/
