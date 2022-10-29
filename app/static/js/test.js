@@ -3,8 +3,11 @@ const spinner = document.querySelector("#spinner");
 const anterior = document.querySelector("#anterior");
 const siguiente = document.querySelector("#siguiente");
 
+var offset = null;
+var limit = null;
+
 anterior.addEventListener('click', () => {
-    if(offset != 0){
+    if(offset != null){
         offset = offset-10;
         /* removeChildNodes es para eliminar todas las card en los containers*/ 
         removeChildNodes(container);
@@ -13,16 +16,18 @@ anterior.addEventListener('click', () => {
 })
 //AGREGAR IF CON LIMITE SI ES NECESARIO
 siguiente.addEventListener('click', () => {
-    offset = offset+10;
-    removeChildNodes(container);
-    fetchPokemons(offset, limit);
+    if(offset != null){
+        offset = offset+10;
+        removeChildNodes(container);
+        fetchPokemons(offset, limit);
+    }
 })
 
 function verPokemones(){
     removeChildNodes(container);
-    var offset = document.getElementById('inicio').value - 1;
+    offset = document.getElementById('inicio').value - 1;
 
-    var limit = document.getElementById('final').value;
+    limit = document.getElementById('final').value;
 
     fetchPokemons(offset, limit);
 }
