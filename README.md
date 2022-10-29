@@ -15,6 +15,7 @@ En el siguiente repositorio se encuentra el Taller N°2 de la asignatura **Compu
 En caso de trabajar en Windows se debe instalar Git Bash desde el siguiente enlace: https://git-scm.com/downloads
 Instalar de forma normal y agregar al PATH de Windows.
 
+Opcional:
 Posterior activar la SSH Key de GITHUB con las instrucciones del siguiente enlace:
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh
 ```
@@ -24,17 +25,19 @@ Se debe clonar el repositorio desde la terminal con el siguiente comando:
 ```bash 
 $ git clone https://github.com/ubosednb/Taller2-PokeAPI-CPyD
 ```
+_Opcional:_ Si se registró la SSH Key en GITHUB, proceda con el siguiente enlace:
+```
+$ git clone git@github.com:ubosednb/Taller2-PokeAPI-CPyD.git 
+```
 
 ### Linux
 Se debe verificar que Python instalado y en caso que no lo esté, instalarlo con el siguiente comando:
 
-_Debian Based: sudo apt install_
-
-_Arch Linux Based: sudo pacman_
 ```bash 
 $ sudo apt install python3 / sudo pacman -S python
 $ python --version
 ```
+_**Debian Based:** sudo apt install / **Arch Linux Based:** sudo pacman_
 Luego de instalar Python, seguir las siguientes instrucciones en la carpeta del repositorio clonado:
 
 ```bash 
