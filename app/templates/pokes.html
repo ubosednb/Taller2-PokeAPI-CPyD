@@ -20,8 +20,25 @@
     <h2 class="subtitle">API Rest - PokeAPI</h2>
 
     <form>
-      Inicio: <input type="text" id="inicio" placeholder="De donde empieza...">
-      Final: <input type="text" id="final" placeholder="¿Cuántos quieres imprimir?">
+      Inicio: <input type="text" id="inicio" placeholder="De donde empieza..." onkeypress="return soloNumeros(event)" onpaste="return false">
+      Final: <input type="text" id="final" placeholder="¿Cuántos quieres imprimir?"onkeypress="return soloNumeros(event)" onpaste="return false">
+      <script>
+        function soloNumeros(event){
+            key=event.keycode || event.which;
+            teclado=String.fromCharCode(key);
+            numero="0123456789";
+            especiales="8-37-38-46";
+            teclado_especial=false;
+            for(var i in especiales){
+                if(key==especiales[i]){
+                    teclado_especial=true;
+                }
+            }
+            if(numero.indexOf(teclado)==-1 && !teclado_especial){
+                return false;
+            }
+        }
+      </script>
       <br><br>
       <input type="button" value="Mostrar pokemones" onclick="verPokemones()">
     </form>
