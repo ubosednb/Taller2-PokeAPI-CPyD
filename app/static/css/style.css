@@ -204,11 +204,12 @@
 
   /* About */
   #div_about{
-    position: fixed;
-    left: 31%;
-    margin-left: -100px;
-    top: 35%;
-    margin-top: -50px;
+    position: flex;
+    justify-content: center;
+    text-align: center;
+    /*left: 31%;*/
+    margin: 30px;
+    /*top: 35%;*/
   }
 
   #ul_about{
