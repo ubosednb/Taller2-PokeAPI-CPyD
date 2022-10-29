@@ -47,12 +47,15 @@ siguiente.addEventListener('click', () => {
     removeChildNodes(container);
     fetchPokemons(offset, limit);
 })
-
+var a=[];
 function verPokemones(){
-    var offset = document.getElementById('inicio');
-    var limit = document.getElementById('final');
+    var offset = document.getElementById('inicio').value;
+    a.push(offset);
+    var limit = document.getElementById('final').value;
+    a.push(limit);
     fetchPokemons(offset, limit);
 }
+console.log(a);
 
 async function fetchPokemons(inicio, final){
     
