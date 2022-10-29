@@ -39,7 +39,7 @@
     padding: 10px;
     background-color: white;
   }
-   
+
   .pokemon-block p {
     margin: 5px;
   }
@@ -163,3 +163,35 @@
     order: 0;
     flex-grow: 0;
   }
+
+    /* Barra de navegación */
+    header {
+      background: rgba(0,0,0,0.7);
+      width: 100%;
+      z-index: 50;
+    }
+    
+    nav {
+      float: center;
+    }
+    
+    nav ul {
+      display: inline-block;
+      list-style-type: none;
+      margin: 20px;
+    }
+    
+    nav ul li {
+      float: inline-start;
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+    }
+    nav ul li a {
+      /* display: block; */
+      padding: 20px;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav ul li:hover {
+      background: #eca023;
+    }
