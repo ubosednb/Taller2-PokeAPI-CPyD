@@ -252,7 +252,7 @@ function createPokemon(pokemon){
             var aux2 = pokemon.abilities[i].ability.name.toString();
             aux2 = aux2.replace("-"," ");
             aux2 =  aux2.charAt(0).toUpperCase() + aux2.slice(1);
-            habi.textContent = `Habilidad: ${aux2}\t`;
+            habi.textContent = `Habilidad Oculta: ${aux2}\t`;
             card.appendChild(habi);
         }
     }
